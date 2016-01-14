@@ -1,0 +1,71 @@
+﻿@model ProjektTechnologieNet.Models.Player
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Usuwanie</h2>
+
+<h3>Czy chcesz usunąć tego piłkarza?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Klub:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Club.name)
+        </dd>
+
+        <dt>
+           Imię:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            Nazwisko:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            Pozycja:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.position)
+        </dd>
+
+        <dt>
+            Narodowość:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nationality)
+        </dd>
+
+        <dt>
+            Wiek:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy piłkarzy", "Index")
+        </div>
+    }
+</div>

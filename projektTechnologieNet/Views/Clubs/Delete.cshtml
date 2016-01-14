@@ -1,0 +1,63 @@
+﻿@model ProjektTechnologieNet.Models.Club
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Usuwanie</h2>
+
+<h3>Czy chcesz usunąć ten klub ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nazwa Klubu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+           Pojemność:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacity)
+        </dd>
+
+        <dt>
+           Trener:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.couch)
+        </dd>
+
+        <dt>
+           Miasto:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+           Liga:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.league)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy klubów", "Index")
+        </div>
+    }
+</div>

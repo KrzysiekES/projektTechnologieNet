@@ -1,0 +1,57 @@
+﻿@model ProjektTechnologieNet.Models.Club
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nazwa klubu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            Pojemność:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacity)
+        </dd>
+
+        <dt>
+           Trener:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.couch)
+        </dd>
+
+        <dt>
+            Miasto:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            Liga:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.league)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.clubID }) |
+    @Html.ActionLink("Powrót do listy klubów", "Index")
+</p>

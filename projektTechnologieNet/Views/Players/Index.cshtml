@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjektTechnologieNet.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Piłkarzy</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Piłkarza do listy", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+         Nazwa Klubu
+        </th>
+        <th>
+          Imię 
+        </th>
+        <th>
+           Nazwisko
+        </th>
+        <th>
+            Pozycja
+        </th>
+        <th>
+            Narodowość
+        </th>
+        <th>
+           Wiek
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Club.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.playerID }) |
+            @Html.ActionLink("Pokaż", "Details", new { id=item.playerID }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.playerID })
+        </td>
+    </tr>
+}
+
+</table>

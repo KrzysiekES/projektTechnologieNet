@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2 class="text-center">Liga Piłkarska</h2>
+    <img src="~/Content/tlo.jpg" alt="tlo" />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @{
+            var txt = "";
+            if (DateTime.Now.Hour > 12)
+            { txt = "Good Evening"; }
+            else
+            { txt = "Good Morning"; }
+        }
+        @txt
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
